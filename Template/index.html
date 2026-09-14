@@ -25,6 +25,10 @@
         </fieldset>
 
         <button type="submit">Générer</button>
-    </form>
+       </form>
+
+    {{ if . }}
+    <pre>{{ . }}</pre>
+    {{ end }}
 </body>
 </html>
