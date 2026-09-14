@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII ART WEB</title>
+</head>
+<body>
+    <h1>ASCII Art Web</h1>
+
+    <form action="/ascii-art" method="POST">
+        <label for="text">Texte à transformer :</label>
+        <textarea id="text" name="text" maxlength="200" required></textarea>
+        <fieldset>
+            <legend>Choisir un banner :</legend>
+            
+            <input type="radio" id="standard" name="banner" value="standard" checked>
+            <label for="standard">Standard</label>
+
+            <input type="radio" id="shadow" name="banner" value="shadow">
+            <label for="shadow">Shadow</label>
+
+            <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
+            <label for="thinkertoy">Thinkertoy</label>
+        </fieldset>
+
+        <button type="submit">Générer</button>
+    </form>
+</body>
+</html>
