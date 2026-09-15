@@ -14,7 +14,7 @@ func main() {
 
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		fmt.Println("Error 500 : Internal Server Error")
+		fmt.Println("500 Internal Server Error")
 		return
 	}
 }

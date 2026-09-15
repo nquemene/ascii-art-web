@@ -2,6 +2,7 @@ package handler
 
 import (
 	asciiartweb "asciiartweb/Tools"
+	"bytes"
 	"html/template"
 	"net/http"
 )
@@ -46,9 +47,18 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func RenderIndex(w http.ResponseWriter, data string) error {
-	tmpl, err := template.ParseFiles("Template/index.html")
+	tmpl, err := template.ParseFiles("Memplate/index.html")
 	if err != nil {
 		return err
 	}
-	return tmpl.Execute(w, data)
+
+	var buffer bytes.Buffer
+
+	if err := tmpl.Execute(&buffer, data); err != nil {
+		return err
+	}
+
+	w.Write(buffer.Bytes())
+
+	return nil
 }
