@@ -47,7 +47,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func RenderIndex(w http.ResponseWriter, data string) error {
-	tmpl, err := template.ParseFiles("Memplate/index.html")
+	tmpl, err := template.ParseFiles("Template/index.html")
 	if err != nil {
 		return err
 	}
