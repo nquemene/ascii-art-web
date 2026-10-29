@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	http.Handle("GET /Style/", http.StripPrefix("/Style/", http.FileServer(http.Dir("Style"))))
 	http.HandleFunc("GET /{$}", handler.IndexHandler)
 	http.HandleFunc("POST /ascii-art", handler.AsciiArtHandler)
 

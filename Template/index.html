@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASCII ART WEB</title>
+    <link rel="stylesheet" href="/Style/style.css">
 </head>
 <body>
-    <h1>ASCII Art Web</h1>
+    <main class="container">
+        <h1>ASCII Art Web</h1>
 
-    <form action="/ascii-art" method="POST">
-        <label for="text">Texte à transformer :</label>
-        <textarea id="text" name="text" maxlength="200" required></textarea>
-        <fieldset>
-            <legend>Choisir un banner :</legend>
-            
-            <input type="radio" id="standard" name="banner" value="standard" checked>
-            <label for="standard">Standard</label>
+        <form action="/ascii-art" method="POST" class="card">
+            <label for="text">Texte à transformer :</label>
+            <textarea id="text" name="text" maxlength="200" required></textarea>
 
-            <input type="radio" id="shadow" name="banner" value="shadow">
-            <label for="shadow">Shadow</label>
+            <fieldset>
+                <legend>Choisis une bannière :</legend>
+                <input type="radio" id="standard" name="banner" value="standard" checked>
+                <label for="standard">Standard</label>
 
-            <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
-            <label for="thinkertoy">Thinkertoy</label>
-        </fieldset>
+                <input type="radio" id="shadow" name="banner" value="shadow">
+                <label for="shadow">Shadow</label>
 
-        <button type="submit">Générer</button>
-       </form>
+                <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
+                <label for="thinkertoy">Thinkertoy</label>
+            </fieldset>
 
-    <label for="text">Texte transformé :</label>
-    {{ if . }}
-    <pre>{{ . }}</pre>
-    {{ end }}
+            <button type="submit">Générer</button>
+        </form>
+
+        {{ if . }}
+        <section class="card result">
+            <h2>Texte transformé :</h2>
+            <pre>{{ . }}</pre>
+        </section>
+        {{ end }}
+    </main>
 </body>
 </html>

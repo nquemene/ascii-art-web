@@ -27,6 +27,8 @@ ascii-art-web/
 ├── Tools/
 │   ├── asciiprint.go
 │   └── loadbanner.go
+├── Style/
+│   └── style.css
 ├── go.mod
 └── main.go
 ```
